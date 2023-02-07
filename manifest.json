@@ -9,7 +9,9 @@
   },
   "permissions": [
     "tabs",
-    "management",
-    "storage"
+    "management"
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ]
 }

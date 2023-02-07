@@ -17,7 +17,7 @@
 
             <div class="lg:flex justify-between items-center mb-6">
               <p class="text-2xl font-semibold mb-2 lg:mb-0">Good afternoon, Joe!</p>
-              <button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow">View Logs</button>
+              <button @click="checkFbLogin" class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow">View Logs</button>
             </div>
 
             <div class="flex flex-wrap -mx-3 mb-20">
@@ -222,8 +222,15 @@ export default {
         }
     },
     mounted () {
-        new Chart(document.getElementById('buyers-chart'), this.buyersData)
-        new Chart(document.getElementById('reviews-chart'), this.reviewsData)
+      new Chart(document.getElementById('buyers-chart'), this.buyersData)
+      new Chart(document.getElementById('reviews-chart'), this.reviewsData)
+    },
+    methods: {
+      checkFbLogin() {
+        chrome.runtime.sendMessage({ type: "CHECK_FB_LOGIN" }, (response) => {
+          console.log(response);
+        });
+      }
     }
 }
 </script>
