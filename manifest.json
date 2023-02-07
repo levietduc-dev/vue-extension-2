@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "CRXJS Vue Vite Example",
+  "version": "1.0.0",
+  "action": { "default_title": "Prime Extension" },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "tabs",
+    "management",
+    "storage"
+  ]
+}
