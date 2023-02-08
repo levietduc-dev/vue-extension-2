@@ -6,7 +6,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import { chromeExtension, simpleReloader } from 'rollup-plugin-chrome-extension'
 
 export default {
-    input: 'manifest.json',
+    input: ['manifest.json', 'src/scripts/subscription.js'],
     output: {
         dir: 'dist',
         format: 'esm',
